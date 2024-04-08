@@ -40,7 +40,25 @@ vm2_params = {
 }
 ```
 
-test_kvm.py uses the qemu_host create multiple VM hosts named agent1 and agent2 connected together by an OpenVSwitch
+import QemuHost from qumu_host.py
+Use the static class method in QemuHost to create a VM host. 
+```
+QemuHost.create()
+```
+
+The architecture template of the virtual machine created can changed through the
+QemuHost.domain_config_template variable. This template defines the configuration of the 
+virtual machine in terms of memory, cpu, power management, and devices like networking
+disk, controllers etc. 
+
+Once a VM is created, the instance can be managed using the following API exposed by the
+QemuHost object
+
+start()
+Stop()
+pause()
+
+test_kvm.py is a sample usege script theat uses the qemu_host to create multiple VM hosts named agent1 and agent2 connected together by an OpenVSwitch
 The VM properties are defined as a dictionary in test_kvm.py as follows
 
 
