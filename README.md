@@ -1,5 +1,6 @@
 # qemu_vm_control_lib
-This is a simple python based wrapper around libvirt to programmatically put together a system using KVM VMs and openvswitch for networking.
+This is a simple python based wrapper around libvirt to programmatically put together a virtual topology comprising of KVM VMs and openvswitch networking.
+Custom topologies can be created to test confguration or run specific traffic test cases.
 
 # Required libraries  (Ubuntu)
 - apt install qemu-kvm libvirt-dev 
@@ -46,10 +47,11 @@ Use the static class method in QemuHost to create a VM host.
 QemuHost.create()
 ```
 
+
 The architecture template of the virtual machine created can changed through the
 QemuHost.domain_config_template variable. This template defines the configuration of the 
 virtual machine in terms of memory, cpu, power management, and devices like networking
-disk, controllers etc. 
+disk, controllers etc.  The parameters specified previously is used to customize the configuration defined by the template.
 
 Once a VM is created, the instance can be managed using the following API exposed by the
 QemuHost object
