@@ -236,7 +236,7 @@ class QemuHost:
             raise RuntimeError('Supplied bridge %s is not configured, please configure the bridge before invoking create'%d['source_bridge'])
 
 
-        pdb.set_trace()
+        
         # check if the instance with the same name already exists
         # if so, exit 
         for domain in conn.listAllDomains():
@@ -252,7 +252,7 @@ class QemuHost:
 
             #raise RuntimeError( ' Supplied domain name %s already exists, please provide an unique name' % d['name'])
 
-        #pdb.set_trace()
+        
         # create instance
         instance = conn.defineXML( _config)
         if instance is None:
