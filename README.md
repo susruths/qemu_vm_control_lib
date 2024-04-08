@@ -54,10 +54,12 @@ disk, controllers etc.
 Once a VM is created, the instance can be managed using the following API exposed by the
 QemuHost object
 
+```
 start()
 Stop()
 pause()
-
+resume()
+```
 test_kvm.py is a sample usege script theat uses the qemu_host to create multiple VM hosts named agent1 and agent2 connected together by an OpenVSwitch
 The VM properties are defined as a dictionary in test_kvm.py as follows
 
